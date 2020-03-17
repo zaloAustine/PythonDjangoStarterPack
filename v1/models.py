@@ -9,6 +9,7 @@ class Quiz(models.Model):
     description = models.TextField(verbose_name="description",null=True)
     created_date = models.DateField(auto_now=True)
     url = models.URLField(verbose_name="url",null=True)
+    owner = models.CharField(max_length=300,null=True)   
 
 
 class Question(models.Model):
@@ -21,12 +22,11 @@ class Question(models.Model):
     corrent_answer = models.CharField(verbose_name='correct answer',null=False,max_length=10) 
 
 
-
-class User(models.Model):
-    username = models.CharField(max_length=300)
-    email = models.CharField(max_length=300)
-    password = models.CharField(max_length=300)
-
-   
-
+class Profile(models.Model):
+    first_name = models.TextField(verbose_name='question',null=False) 
+    second_name = models.TextField(verbose_name='choice1',null=False) 
+    email = models.TextField(verbose_name='choise2',null=False) 
+    phone = models.TextField(verbose_name='choise3',null=False) 
+    image = models.TextField(verbose_name='correct answer',null=False) 
+    user_id = models.IntegerField()
 
